@@ -1,0 +1,15 @@
+To save:
+
+dconf dump /org/gnome/terminal/ > ~/gterminal.preferences
+
+To load: 
+
+cat ~/gterminal.preferences | dconf load /org/gnome/terminal/legacy/profiles:/
+
+may need: 
+
+sudo apt install dconf-cli
+
+or 
+
+sudo apt install dconf-editor
