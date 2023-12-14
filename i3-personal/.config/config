@@ -201,19 +201,23 @@ bindsym Control+$mod+l exec "i3lock -c 000000"
 
 #assign [class="(?i)code" ] 2
 #exec --no-startup-id "code ."
+workspace $ws1 output DP-5
+workspace $ws2 output DP-5
+workspace $ws3 output DP-1
+workspace $ws4 output HDMI-0
 
-assign [class="Spotify"] 1
-exec --no-startup-id spotify
 
-assign [class="Discord"] 2
-exec --no-startup-id discord
+assign [class="Spotify"] 2
+exec --no-startup-id sleep 1 && spotify
 
-assign [class="i3-sensible-terminal"] 3
-exec --no-startup-id i3-sensible-terminal
+#assign [class="Discord" title="Friends - Discord"] 1
+
+assign [class="Gnome-terminal"] 3
+exec --no-startup-id sleep 1 && gnome-terminal
 
 assign [class="Brave"] 4
-exec --no-startup-id brave
+exec --no-startup-id sleep 1 && brave
 
-assign [class="Brave"] 5
-exec --no-startup-id brave
-
+exec --no-startup-id i3-msg 'workspace $ws1'
+assign [class="discord" ] 1
+exec --no-startup-id sleep 3 && discord
