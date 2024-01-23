@@ -190,13 +190,32 @@ bar {
 bindsym Control+$mod+l exec "i3lock -c 000000"
 
 # auto lock the screen
-exec "xautolock -detectsleep -time 3 -locker \"i3lock -c 000000\""
+#exec "xautolock -detectsleep -time 3 -locker \"i3lock -c 000000\""
 
 # auto adjust the reso 
-exec "xrandr --output eDP --mode 1920x1080"
+#exec "xrandr --output eDP --mode 3840x2400 --pos 3840x0 --rotate normal --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --off --output DisplayPort-3 --off --output DisplayPort-4 --off --output HDMI-1-0 --primary --scale 2x2 --mode 3840x2160 --pos 0x0 --rotate normal"
+
+#exec "xrandr --output eDP --mode 3840x2400 --pos 1920x0 --rotate normal --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --off --output DisplayPort-3 --off --output DisplayPort-4 --off --output HDMI-1-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal"
+#exec "xrandr --output eDP --mode 1920x1080 "
+#3840x2400
+exec "xrandr --output eDP --mode 3840x2400 --pos 1920x0 --rotate normal --output HDMI-1-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal"
+#exec "xrandr --output DisplayPort-0 --same-as eDP"
+#exec "xrandr --output DisplayPort-1 --same-as eDP"
+#exec "xrandr --output DisplayPort-2 --same-as eDP"
+#exec "xrandr --output HDMI-1-0 --same-as eDP"
+#HDMI-1-0 make the display port one be the same as main display
+#exec "xrandr --output DisplayPort-0 --same-as eDP"
+# auto adjust the reso 
+#exec "xrandr --output XWAYLAND1 --mode 1920x1080"
 
 #make the display port one be the same as main display
-exec "xrandr --output DisplayPort-0 --same-as eDP"
+#exec "xrandr --output XWAYLAND1 --same-as XWAYLAND0"
+
+workspace $ws1 output HDMI-1-0
+workspace $ws2 output HDMI-1-0
+workspace $ws3 output HDMI-1-0
+workspace $ws4 output HDMI-1-0
+workspace $ws5 output HDMI-1-0
 
 assign [class="i3-sensible-terminal"] 1
 exec --no-startup-id i3-sensible-terminal
