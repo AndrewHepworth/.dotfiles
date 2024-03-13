@@ -1,0 +1,25 @@
+#!/usr/bin/env zsh
+
+do_work=false
+
+if [[ "$1" == 1 ]]; then 
+    do_work=true
+    echo "do work set to true"
+fi
+
+if [[ -z $STOW_FOLDERS ]]; then
+    STOW_FOLDERS="bin,personal,tmux,ubuntu,zsh"
+    if  $do_work ; then
+        STOW_FOLDERS="${STOW_FOLDERS},i3-work"
+    else 
+        STOW_FOLDERS="${STOW_FOLDERS},i3-p-2024"
+    fi
+fi
+
+echo "stowing files env var $STOW_FOLDERS "
+
+if [[ -z $DOTFILES ]]; then
+    DOTFILES=$HOME/.dotfiles
+fi
+
+STOW_FOLDERS=$STOW_FOLDERS DOTFILES=$DOTFILES $DOTFILES/install
