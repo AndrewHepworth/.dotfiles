@@ -1,5 +1,15 @@
+export XDG_CONFIG_HOME=$HOME/.config
+
 VIM="nvim"
 
-export GIT_EDITOR=$VIM
+PERSONAL=$XDG_CONFIG_HOME/personal
+
+source $PERSONAL/env
+for i in `find -L $PERSONAL`; do
+    source $i
+
+done
 
 addToPathFront $HOME/.local/scripts
+
+export GIT_EDITOR=$VIM
