@@ -1,0 +1,5 @@
+git clone --mirror git://example.com/some-big-repo.git
+java -jar bfg.jar --strip-blobs-bigger-than 100M some-big-repo.git
+cd some-big-repo.git
+git reflog expire --expire=now --all && git gc --prune=now --aggressive
+git push

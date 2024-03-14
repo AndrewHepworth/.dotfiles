@@ -3,3 +3,4 @@
 alias lsp="ls -al"
 alias vim="$VIM"
 alias my_ip="ip address | grep -o \"inet 192.*/\" | awk '{ print \$2 }' | tr / ' ' | xargs"
+alias bfg="jv -jar /usr/bin/bfg-1.14.0.jar"
