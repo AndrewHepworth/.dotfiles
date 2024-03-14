@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+if [[ $# -eq 0 ]]; then
+    echo "need to provide directory or filename to seach for"
+else
+    git log --diff-filter=A --find-renames -- $1
+fi

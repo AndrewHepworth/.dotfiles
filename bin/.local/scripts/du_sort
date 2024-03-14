@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+if [[ $# -eq 0 ]]; then
+    echo "didnt provide a path to find highest file on that path"
+else 
+    #du -a "$1" 2>/dev/null | sort -n -r 
+    du -a "$1" 2>/dev/null | sort -n 
+fi
