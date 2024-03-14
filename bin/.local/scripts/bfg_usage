@@ -3,3 +3,12 @@ java -jar bfg.jar --strip-blobs-bigger-than 100M some-big-repo.git
 cd some-big-repo.git
 git reflog expire --expire=now --all && git gc --prune=now --aggressive
 git push
+
+to get rid of merge requests with the git push add this to the config of the repo, under the remote section:
+	fetch = +refs/heads/*:refs/heads/*
+	fetch = +refs/tags/*:refs/tags/*
+	fetch = +refs/change/*:refs/change/*
+	push = +refs/heads/*:refs/heads/*
+	push = +refs/tags/*:refs/tags/*
+	push = +refs/change/*:refs/change/*
+
