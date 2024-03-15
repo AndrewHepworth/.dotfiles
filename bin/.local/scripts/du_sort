@@ -1,5 +1,7 @@
 #!/usr/bin/bash
-
+#potential other commands to look at eventually that get top ten etc 
+#find /home -type f -exec du -s {} \; | sort -r -k1,1n | head
+#du -a -h /path | sort -h -r | head -n 10
 if [[ $# -eq 0 ]]; then
     echo "didnt provide a path to find highest file on that path"
 else 
