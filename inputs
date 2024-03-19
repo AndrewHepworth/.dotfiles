@@ -8,7 +8,7 @@ if [[ "$1" == 1 ]]; then
 fi
 
 if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS="bin,tmux,ubuntu,zsh"
+    STOW_FOLDERS="bin,tmux,ubuntu,zsh,nvim"
     if  $do_work ; then
         STOW_FOLDERS="${STOW_FOLDERS},i3-work"
     else 
