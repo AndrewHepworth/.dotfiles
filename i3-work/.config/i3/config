@@ -198,7 +198,7 @@ bindsym Control+$mod+l exec "i3lock -c 000000"
 #exec "xrandr --output eDP --mode 3840x2400 --pos 1920x0 --rotate normal --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --off --output DisplayPort-3 --off --output DisplayPort-4 --off --output HDMI-1-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal"
 #exec "xrandr --output eDP --mode 1920x1080 "
 #3840x2400
-exec "xrandr --output eDP --mode 3840x2400 --pos 1920x0 --rotate normal --output HDMI-1-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal"
+exec "xrandr --output eDP --mode 3840x2400 --pos 1920x0 --scale 0.5x0.5 --rotate normal --output HDMI-1-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal"
 #exec "xrandr --output DisplayPort-0 --same-as eDP"
 #exec "xrandr --output DisplayPort-1 --same-as eDP"
 #exec "xrandr --output DisplayPort-2 --same-as eDP"
