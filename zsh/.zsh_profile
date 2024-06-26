@@ -13,3 +13,6 @@ done
 addToPathFront $HOME/.local/scripts
 
 export GIT_EDITOR=$VIM
+
+
+addToPathFront $HOME/Qt/6.3.0/gcc_64/bin

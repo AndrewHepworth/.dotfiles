@@ -114,3 +114,7 @@ export NVM_DIR="$HOME/.nvm"
 
 #export TERM="xterm-256color"
 source ~/.zsh_profile
+
+if [ -f ~/.zsh_aliases ]; then
+    . ~/.zsh_aliases
+fi
