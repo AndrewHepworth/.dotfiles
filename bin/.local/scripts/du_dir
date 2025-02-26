@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+#du -ah /home/agsenze --max-depth=1 | sort -hr | head -n 10
+
+if [[ $# -eq 0 ]]; then
+    echo "didnt provide a path to find largest directory on that path"
+else 
+    du -ah "$1" --max-depth=1 | sort -hr | head -n 10 
+fi
