@@ -1,0 +1,11 @@
+#!/bin/bash
+
+curl https://pyenv.run | bash
+export PATH="$HOME/.pyenv/bin:$PATH"\neval "$(pyenv init --path)"\neval "$(pyenv virtualenv-init -)"
+exec $SHELL
+pyenv install 3.11.5
+
+echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.bashrc\necho 'eval "$(pyenv init --path)"' >> ~/.bashrc\necho 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc\nsource ~/.bashrc\n
+source ~/.bashrc
+which python3
+pip install rns
