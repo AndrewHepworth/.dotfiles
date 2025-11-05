@@ -118,3 +118,9 @@ source ~/.zsh_profile
 if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
 fi
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  export PATH="$HOME/.pyenv/bin:$PATH"
+  eval "$(pyenv init --path)"
+  eval "$(pyenv virtualenv-init -)"
+fi
