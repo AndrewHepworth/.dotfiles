@@ -1,0 +1,58 @@
+# i3status configuration (based on /etc/i3status.conf). See "man i3status".
+# ß  <- must render as sharp s (file must be UTF-8)
+
+general {
+        colors = true
+        interval = 5
+}
+
+order += "ipv6"
+order += "wireless _first_"
+order += "ethernet _first_"
+order += "battery all"
+order += "disk /"
+order += "cpu_temperature 0"
+order += "load"
+order += "memory"
+order += "tztime local"
+
+wireless _first_ {
+        format_up = "W: (%quality at %essid) %ip"
+        format_down = "W: down"
+}
+
+ethernet _first_ {
+        format_up = "E: %ip (%speed)"
+        format_down = "E: down"
+}
+
+battery all {
+        format = "%status %percentage %remaining"
+}
+
+disk "/" {
+        format = "SSD used: %used | free: %avail | total: %total"
+        low_threshold = 10
+        threshold_type = "percentage_avail"
+}
+
+# AMD Ryzen k10temp (Tctl); hwmon number can change between boots, hence the glob
+cpu_temperature 0 {
+        format = "CPU: %degrees°C"
+        path = "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon*/temp1_input"
+        max_threshold = 85
+}
+
+load {
+        format = "%1min"
+}
+
+memory {
+        format = "RAM used: %used | free: %free | avail: %available | total: %total"
+        threshold_degraded = "1G"
+        format_degraded = "RAM LOW < %available"
+}
+
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S"
+}
