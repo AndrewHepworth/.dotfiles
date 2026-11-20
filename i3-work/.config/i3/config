@@ -239,6 +239,8 @@ exec --no-startup-id slack
 assign [class="obsidian"] 6
 exec --no-startup-id obsidian
 
+assign [class="grok-bot"] 7
+
 
 ##  Screenshots in files
 bindsym Print exec --no-startup-id maim --format=png "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-all.png"
