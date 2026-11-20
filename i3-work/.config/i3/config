@@ -225,7 +225,7 @@ assign [class="i3-sensible-terminal"] 1
 exec --no-startup-id i3-sensible-terminal
 
 assign [class="(?i)code" ] 2
-exec --no-startup-id "code ."
+exec --no-startup-id zsh -ic "code ."
 
 assign [class="Brave"] 3
 exec --no-startup-id brave
