@@ -31,14 +31,14 @@ battery all {
 }
 
 disk "/" {
-        format = "SSD used: %used | free: %avail | total: %total"
+        format = "SF: %avail | ST: %total"
         low_threshold = 10
         threshold_type = "percentage_avail"
 }
 
 # AMD Ryzen k10temp (Tctl); hwmon number can change between boots, hence the glob
 cpu_temperature 0 {
-        format = "CPU: %degrees°C"
+        format = "CPU: %degrees"
         path = "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon*/temp1_input"
         max_threshold = 85
 }
@@ -48,7 +48,7 @@ load {
 }
 
 memory {
-        format = "RAM used: %used | free: %free | avail: %available | total: %total"
+        format = "MU: %used | MF: %free | MA: %available"
         threshold_degraded = "1G"
         format_degraded = "RAM LOW < %available"
 }
