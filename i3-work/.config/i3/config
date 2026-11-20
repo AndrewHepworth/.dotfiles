@@ -228,7 +228,7 @@ assign [class="(?i)code" ] 2
 exec --no-startup-id zsh -ic "code ."
 
 assign [class="Brave"] 3
-exec --no-startup-id brave
+exec --no-startup-id brave-browser
 
 assign [class="Insomnia"] 4
 exec --no-startup-id insomnia
