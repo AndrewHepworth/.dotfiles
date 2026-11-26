@@ -1,1 +1,14 @@
 alias lsta="ls -lt"
+
+vnc-share() {
+    local ip
+    ip=$(ip -4 route get 1.1.1.1 2>/dev/null | awk '{for(i=1;i<=NF;i++) if($i=="src"){print $(i+1); exit}}')
+    [ -z "$ip" ] && ip=$(hostname -I | awk '{print $1}')
+    echo "1) On Windows (PowerShell / Terminal):"
+    echo "   ssh -N -L 5900:localhost:5900 ${USER}@${ip}"
+    echo "2) In RealVNC Viewer, connect to:"
+    echo "   localhost:5900"
+    echo "Press Ctrl-C here when done."
+    echo
+    x11vnc -display "${DISPLAY:-:0}" -localhost -forever -shared -nopw -ncache 0 -wait 5 -defer 5 -threads "$@"
+}
