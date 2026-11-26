@@ -10,5 +10,5 @@ vnc-share() {
     echo "   localhost:5900"
     echo "Press Ctrl-C here when done."
     echo
-    x11vnc -display "${DISPLAY:-:0}" -localhost -forever -shared -nopw -ncache 0 -wait 5 -defer 5 -threads "$@"
+    x11vnc -q -display "${DISPLAY:-:0}" -localhost -forever -shared -nopw -ncache 0 -wait 5 -defer 5 -threads "$@"
 }
