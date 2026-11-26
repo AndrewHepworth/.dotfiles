@@ -1,0 +1,12 @@
+[Unit]
+Description=x11vnc localhost-only screen share (use over SSH tunnel)
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/x11vnc -q -display :0 -localhost -forever -shared -nopw -ncache 0 -wait 5 -defer 5 -threads
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=graphical-session.target

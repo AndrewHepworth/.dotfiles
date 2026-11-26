@@ -1,14 +1,22 @@
 alias lsta="ls -lt"
 
-vnc-share() {
+vnc-start() {
+    systemctl --user start x11vnc.service || return 1
     local ip
     ip=$(ip -4 route get 1.1.1.1 2>/dev/null | awk '{for(i=1;i<=NF;i++) if($i=="src"){print $(i+1); exit}}')
     [ -z "$ip" ] && ip=$(hostname -I | awk '{print $1}')
+    echo "x11vnc.service started (localhost:5900 only)."
     echo "1) On Windows (PowerShell / Terminal):"
     echo "   ssh -N -L 5900:localhost:5900 ${USER}@${ip}"
     echo "2) In RealVNC Viewer, connect to:"
     echo "   localhost:5900"
-    echo "Press Ctrl-C here when done."
-    echo
-    x11vnc -q -display "${DISPLAY:-:0}" -localhost -forever -shared -nopw -ncache 0 -wait 5 -defer 5 -threads "$@"
+    echo "Run 'vnc-stop' when done."
+}
+
+vnc-stop() {
+    systemctl --user stop x11vnc.service && echo "x11vnc.service stopped."
+}
+
+vnc-status() {
+    systemctl --user status x11vnc.service --no-pager
 }
